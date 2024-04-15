@@ -1,4 +1,4 @@
-% Load the image
+
 grayImage = imread('/MATLAB Drive/your_image.mat'); % Replace 'your_image.jpg' with the actual image file path
 
 % Perform edge detection (you can replace this with your preferred edge detection method)
@@ -34,10 +34,10 @@ function code = generateChainCode(boundary)
     % Define directions (assuming 8-connectivity)
     directions = [0, 1; -1, 1; -1, 0; -1, -1; 0, -1; 1, -1; 1, 0; 1, 1];
 
-    % Initialize chain code
+% Initialize chain code
     code = zeros(1, length(boundary));
 
-    % Convert boundary coordinates to chain code
+ % Convert boundary coordinates to chain code
     for i = 2:length(boundary)
         diffVector = boundary(i, :) - boundary(i - 1, :);
         [~, index] = ismember(diffVector, directions, 'rows');
